@@ -7,7 +7,7 @@ import lombok.*;
 @Setter
 @Getter
 @ToString
-public class Topping {
+public class Topping extends MenùItem {
     private String ingredient;
     private int calories;
     private double price;

@@ -9,7 +9,7 @@ import java.util.List;
 @Setter
 @Getter
 @ToString
-public class Pizza {
+public class Pizza extends MenùItem {
     private String pizzaName;
     private List<Topping> ingredients;
     private int calories;
