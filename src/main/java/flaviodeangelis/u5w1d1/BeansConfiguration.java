@@ -1,14 +1,17 @@
 package flaviodeangelis.u5w1d1;
 
 import flaviodeangelis.u5w1d1.entities.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
+@PropertySource("application.properties")
 public class BeansConfiguration {
 
     @Bean
@@ -65,7 +68,7 @@ public class BeansConfiguration {
     }
 
     @Bean
-    Order getOrder1() {
+    Order getOrder1(@Value("${costo.comperto}") double costoCoperto) {
         List<Topping> ingredients1 = new ArrayList<>();
         List<Topping> ingredients2 = new ArrayList<>();
         List<MenùItem> orderItem = new ArrayList<>();
@@ -87,6 +90,6 @@ public class BeansConfiguration {
         Drink cola = new Drink("Coca Cola", 211, 2.50);
         orderItem.add(acqua);
         orderItem.add(cola);
-        return new Order(1, "in corso", 3, LocalDateTime.now(), orderItem, 3.00);
+        return new Order(1, "in corso", 3, LocalDateTime.now(), orderItem, costoCoperto);
     }
 }
