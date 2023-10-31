@@ -87,6 +87,6 @@ public class BeansConfiguration {
         Drink cola = new Drink("Coca Cola", 211, 2.50);
         orderItem.add(acqua);
         orderItem.add(cola);
-        return new Order(1, "in corso", 3, LocalDateTime.now(), orderItem);
+        return new Order(1, "in corso", 3, LocalDateTime.now(), orderItem, 3.00);
     }
 }

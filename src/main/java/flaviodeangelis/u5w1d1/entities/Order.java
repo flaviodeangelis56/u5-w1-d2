@@ -20,4 +20,5 @@ public class Order {
     private int numberOfGuests;
     private LocalDateTime orderTime;
     private List<MenùItem> orderItems;
+    private double costoCoperto;
 }
